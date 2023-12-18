@@ -22,18 +22,61 @@ public class HarryPotterQuiz {
      *   Por ejemplo, en Slytherin se premia la ambición y la astucia.
      */
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Hola");
-        String input = sc.nextLine();
-        System.out.println(input);
+        initQuizz();
     }
 
     private static void initQuizz() {
+        Scanner sc = new Scanner(System.in);
         List<Question> questions = loadJSON();
+        int total = 0;
+        for (Question q : questions) {
+            System.out.println(q);
+            boolean correctOption = false;
+
+            while (!correctOption) {
+                System.out.println("Ingresa tu selección: ");
+                String input = sc.nextLine();
+                for (Option option : q.getOptions()) {
+                    if (option.getId().equalsIgnoreCase(input)) {
+                        total += option.getValue();
+                        correctOption = true;
+                    }
+                }
+                if (!correctOption) {
+                    System.out.println("La opción ingresada no es valida...");
+                }
+            }
+        }
+
+        String result = calculateHouse(total);
+        System.out.println("Tu casa es: " + result);
+
+        printHousesPoints();
+    }
+
+    private static void printHousesPoints() {
+        System.out.println("====================================================");
+        System.out.println("15-20 puntos: Ravenclaw");
+        System.out.println("10-14 puntos: Gryffindor");
+        System.out.println("5-9 puntos: Hufflepuff");
+        System.out.println("0-4 puntos: Slytherin");
+        System.out.println("====================================================");
+    }
+
+    private static String calculateHouse(int total) {
+        if (total >= 15 && total <= 20) {
+            return "Ravenclaw";
+        } else if (total >= 10 && total <= 14) {
+            return "Gryffindor";
+        } else if (total >= 5 && total <= 9) {
+            return "Hufflepuff";
+        } else {
+            return "Slytherin";
+        }
     }
 
     private static List<Question> loadJSON() {
-        File file = new File("/mnt/nvme0n1p4/Projects/JavaProjects/Programming Challenges 2023/src/week_07/data.json");
+        File file = new File("/run/media/santiago/Data/Projects/JavaProjects/Programming Challenges 2023/src/week_07/data.json");
         ObjectMapper objectMapper = new ObjectMapper();
         List<Question> questions = new ArrayList<>();
 

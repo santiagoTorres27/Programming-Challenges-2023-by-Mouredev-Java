@@ -25,8 +25,8 @@ public class Question {
     private String printOptions() {
         String options = "\n";
         for (int i = 0; i < getOptions().size(); i++) {
-            options += (i + 1) + " - " + getOptions().get(i).getText() + " " +
-                    getOptions().get(i).getValue() + "\n";
+            options += (i + 1) + " - " + getOptions().get(i).getText() + " (" +
+                    getOptions().get(i).getValue() + " puntos)\n";
         }
         return options;
     }
