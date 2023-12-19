@@ -1,5 +1,6 @@
 package week_08;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class RandomNumber {
@@ -11,9 +12,32 @@ public class RandomNumber {
      * Es más complicado de lo que parece...
      */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a number: ");
-        String num = sc.nextLine();
-        System.out.println(num);
+        int minNumber = 10;
+        int maxNumber = 15;
+        int randomValue = generateRandomNumber(minNumber, maxNumber);
+        System.out.println(randomValue);
     }
+
+    private static int generateRandomNumber(int min, int max) {
+        Date today = new Date();
+        long millis = today.getTime();
+        int range = max - min + 1;
+        long adjustedMillis = millis % range;
+        int random = (int) adjustedMillis + min;
+        return random;
+    }
+
+//    private static int generateRandomNumber2(int min, int max) {
+//        Date today = new Date();
+//        long millis = today.getTime();
+//        int maxDigits = String.valueOf(max).length();
+//        int millisLength = String.valueOf(millis).length();
+//        int randomNumber = Integer.parseInt(String.valueOf(millis).substring(millisLength - maxDigits, millisLength));
+//
+//        while (randomNumber >= max || randomNumber <= min) {
+//            randomNumber = randomNumber / 2;
+//        }
+//
+//        return randomNumber;
+//    }
 }
