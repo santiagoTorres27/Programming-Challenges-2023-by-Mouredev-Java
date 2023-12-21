@@ -30,20 +30,31 @@ public class GuessTheWord {
         String word = generateWord();
         ArrayList<Character> hiddenLetters = hideLetters(word);
         int lifes = 5;
+        boolean isWin = false;
 
-        while (lifes > 0) {
+        while (lifes > 0 && !isWin) {
             String currentWord = showCurrentWord(word, hiddenLetters);
-            System.out.println(currentWord);
 
+            System.out.println("\n" + currentWord);
             System.out.println("Enter a new letter: ");
+            System.out.println("Restant lifes: " + lifes);
             String input = sc.nextLine();
             char inputChar = input.charAt(0);
 
             if (hiddenLetters.contains(inputChar)) {
-                hiddenLetters.remove(inputChar);
+                hiddenLetters.remove(Character.valueOf(inputChar));
+                if (hiddenLetters.isEmpty()) {
+                    isWin = true;
+                }
             } else {
                 lifes--;
             }
+        }
+
+        if (isWin) {
+            System.out.println("\nCongratulations!!! the secret word was " + word);
+        } else {
+            System.out.println("\nGame over :( the secret word was " + word);
         }
     }
 
