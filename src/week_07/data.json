@@ -1,0 +1,122 @@
+[
+  {
+    "question": "¿Qué cualidad valoras más en ti mismo?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Valentía",
+        "value": 3
+      },
+      {
+        "id": "2",
+        "text": "Inteligencia",
+        "value": 4
+      },
+      {
+        "id": "3",
+        "text": "Lealtad",
+        "value": 2
+      },
+      {
+        "id": "4",
+        "text": "Astucia",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "question": "¿En qué tipo de ambiente te sientes más cómodo?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Ciudad",
+        "value": 1
+      },
+      {
+        "id": "2",
+        "text": "Campo",
+        "value": 3
+      },
+      {
+        "id": "3",
+        "text": "Selva",
+        "value": 2
+      },
+      {
+        "id": "4",
+        "text": "Montaña",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "question": "¿Cuál es tu enfoque preferido para resolver problemas?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Enfrentar de frente",
+        "value": 3
+      },
+      {
+        "id": "2",
+        "text": "Estrategias elaboradas",
+        "value": 4
+      },
+      {
+        "id": "3",
+        "text": "Confianza en instintos",
+        "value": 2
+      },
+      {
+        "id": "4",
+        "text": "Buscar ayuda de otros",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "question": "Si pudieras elegir un animal mágico como compañero, ¿cuál sería y por qué?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Hipóógrifo",
+        "value": 3
+      },
+      {
+        "id": "2",
+        "text": "Dragón",
+        "value": 4
+      },
+      {
+        "id": "3",
+        "text": "Thestral",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "question": "¿Qué valoras más en tus amigos?",
+    "options": [
+      {
+        "id": "1",
+        "text": "Lealtad inquebrantable",
+        "value": 3
+      },
+      {
+        "id": "2",
+        "text": "Inteligencia y sabiduría",
+        "value": 4
+      },
+      {
+        "id": "3",
+        "text": "Diversión y sentido del humor",
+        "value": 2
+      },
+      {
+        "id": "4",
+        "text": "Capacidad de adaptarse",
+        "value": 1
+      }
+    ]
+  }
+]
